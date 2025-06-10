@@ -46,6 +46,8 @@ Although Grafana supports advanced alerting, alerts were not configured in this 
 - Trigger alert if disk usage > 90%
 
 ## OUTPUT
+![Image](https://github.com/user-attachments/assets/d9301574-5faa-459e-95dd-81a8134777de)
 
+![Image](https://github.com/user-attachments/assets/9d3da87f-0b22-455d-ad83-ca75aceaa523)
 
 
