@@ -50,4 +50,6 @@ Although Grafana supports advanced alerting, alerts were not configured in this 
 
 ![Image](https://github.com/user-attachments/assets/9d3da87f-0b22-455d-ad83-ca75aceaa523)
 
+![Image](https://github.com/user-attachments/assets/8c5d925a-d27b-43b3-9be9-dad57b1c38bb)
+
 
