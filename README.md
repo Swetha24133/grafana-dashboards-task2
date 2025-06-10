@@ -1,107 +1,51 @@
-# Grafana Dashboards
+# cloud-storage-task 2
+COMPANY CODTECH IT SOLUTIONS
 
-## Node Exporter Full
+ NAME: SWETHA ATLURI
 
-- For node_exporter
-- Monitor Linux system.
+ INTERN ID: CT04DL970
 
-Only requires the default job_name: node, add as many targets as you need in `/etc/prometheus/prometheus.yml`.
+ DOMAIN: CLOUD COMPUTING
 
-```yaml
-  - job_name: node
-    static_configs:
-      - targets: ['localhost:9100']
-```
+ DURATION: 4 WEEEKS
 
-Recommended for prometheus-node-exporter the arguments `--collector.systemd` and `--collector.processes` because the graph uses some of their metrics.
+ MENTOR: NEELA SANTOSH
 
-> - `timeInterval` in the Grafana data source has to be set accordingly to the > `scrape_interval` configured in Prometheus. You can do this by navigating to connections > Data sources > Prometheus and set Scrape Interval under Interval behaviour. When using provisioning, this is set with the attribute jsonData.timeInterval.
-> - For prometheus-node-exporter v.0.16 or older, use `node-exporter-full-old.> json`
-> - Thanks to the [PCP project](http://pcp.io) for document the values reported > by the kernel in `/proc` (in their `/pmdas/linux/help` src file mainly).
+ # 🌐 Internship Task 2 - Grafana Cloud Monitoring Dashboard
 
+## 🧩 Descripton
 
+This project is part of my internship Task 2, where I set up a cloud-based monitoring dashboard using **Grafana Cloud** and **Prometheus**. The objective was to create a basic monitoring solution that visualizes key system metrics such as CPU usage, memory usage, disk usage, and network activity. I used Grafana's free cloud tier to build and configure the dashboard and added visualizations using example Prometheus metrics.
 
-## Node Exporter BSD
+## 🛠 Tools & Technologies
 
-- For node_exporter in BSD system
-- Monitor BSD system.
-
-Only requires a configured target under any `job_name`.
+- **Grafana Cloud** – Used to build and host the monitoring dashboard.
+- **Prometheus** – Used as a data source for example monitoring metrics.
+- **GitHub** – Repository for code, documentation, and screenshots.
 
 
+## 🚀 Steps Followed
 
-## Haproxy
+1. Created a Grafana Cloud account and configured a new cloud stack.
+2. Set up Prometheus as a data source (using default example or demo metrics).
+3. Built a new dashboard named `System Monitoring Dashboard`.
+4. Created 4 panels, each representing:
+   - **CPU Usage**
+   - **Memory Usage**
+   - **Disk Space Usage**
+   - **Network Usage**
+5. Saved and arranged the panels on the dashboard for better visual clarity.
+6. Took screenshots of each panel for documentation.
+7. Created a GitHub repository to host the README and screenshots.
+8. (Optional) Attempted alert setup. Due to lack of live data, alerting was not configured.
 
-- For Haproxy v.2 or avobe compiled with Prometheus support
-- Monitor Haproxy service.
+## 🔔 Alert Configuration
 
-Only requires a configured target under any `job_name`.
+Although Grafana supports advanced alerting, alerts were not configured in this project due to unavailable real-time data. However, the dashboard is prepared for future alert rule integration, such as:
+- Trigger alert if CPU usage > 80%
+- Trigger alert if disk usage > 90%
 
-
-
-## Apache Full
-
-- Monitor Apache service.
-
->  Moved to https://github.com/grafana/jsonnet-libs
-
-
-
-## NFS Full
-
-- For node_exporter
-- Monitor all NFS and NFSd exported values.
-
-Check that the process was started with the arguments `--collector.nfs` and `--collector.nfsd`.
-
-The same as Node Exporter Full. Only requires the default `job_name: node`, add as many targets as you need in `/etc/prometheus/prometheus.yml`.
+## OUTPUT
 
 
 
-## BIND 9 Full
-
-- For [prometheus-bind-exporter](https://github.com/prometheus-community/bind_exporter)
-- Monitor BIND 9 service. 
- 
-Required configuration in `/etc/bind/named.conf.options`:
-
-```c++
-statistics-channels {
-  inet 127.0.0.1 port 8053 allow { 127.0.0.1; };
-};
-```
-
-On Grafana, it only requires a configured target under any `job_name`. For example:
-
-```yaml
-  - job_name: 'bind'
-    static_configs:
-        - targets:
-           - server_hostname:9000
-```
-
-
-
-## Unbound Full
-
-- For [unbound_exporter](https://github.com/letsencrypt/unbound_exporter)
-- Monitor Unbound DNS service. 
- 
-Required configuration in `/etc/unbound/unbound.conf`:
-
-```server:
-        extended-statistics: yes
-
-remote-control:
-        control-enable: yes
-        control-interface: /run/unbound.ctl
-```
-
-On Grafana, it only requires a configured target under any `job_name`. For example:
-
-```yaml
-  - job_name: 'unbound'
-    static_configs:
-        - targets:
-           - server_hostname:9167
-```
